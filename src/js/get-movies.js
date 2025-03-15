@@ -18,7 +18,6 @@ const getMovies = async (title, page = 1) => {
         }
 
         return await response.json();
-        // console.log(data);
     } catch (error) {
         console.error('Error fetching movies:', error.message);
     }
