@@ -1,0 +1,26 @@
+section > p {
+    color: var(--font-colors);
+    font-weight: 700;
+    font-size: 30px;
+    padding: 50px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: var(--font-colors);
+}
+.swiper-slide{
+    height: 200px;
+    color: var(--font-colors);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-wrapper{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hide-swiper{
+    display: none;
+}

@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/nav.css">
+    <link rel="stylesheet" href="src/css/swiper-style.css">
+    <link rel="stylesheet" href="src/css/card-design.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Swiper Example</title>
@@ -20,10 +22,20 @@
         </ul>
     </nav>
     <main>
+<!--        <div class="card-container">-->
+<!--            <div>-->
+<!--            </div>-->
+<!--        </div>-->
         <section id="popular-movies">
             <p>Popular moves</p>
             <div class="swiper">
                 <div class="swiper-wrapper">
+<!--                    <div class="swiper-slide">Slide 1</div>-->
+<!--                    <div class="swiper-slide">Slide 2</div>-->
+<!--                    <div class="swiper-slide">Slide 3</div>-->
+<!--                    <div class="swiper-slide">Slide 1</div>-->
+<!--                    <div class="swiper-slide">Slide 2</div>-->
+<!--                    <div class="swiper-slide">Slide 3</div>-->
 
                 </div>
                 <div class="swiper-pagination"></div>
@@ -45,9 +57,29 @@
                 <div class="swiper-scrollbar"></div>
             </div>
         </section>
+        <section id="search-result" class="hide-swiper">
+            <p>Search Result</p>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 1</div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section>
 
     </main>
+    <script src="src/js/get-movies.js" type="module"> </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="src/js/initailize-swipers.js"></script>
+    <script src="src/js/on-page-load.js" type="module"></script>
 </body>
 </html>
