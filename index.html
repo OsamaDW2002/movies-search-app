@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/nav.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Swiper Example</title>
 </head>
 <body>
-    <script src="src/js/get-movies.js" type="module"></script>
+    <nav>
+        <ul>
+            <li><img src="src/assets/icons/logo/logo.svg" alt="A logo image inside the navbar, featuring a movie symbol within a search icon."></li>
+            <li><p>Movies Hunter</p></li>
+            <li class="search-bar">
+                <div><input type="text" placeholder="search about movie’s title"></div>
+                <img src="src/assets/icons/search.svg" alt="A search icon inside the search input, which is within the navbar">
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section id="popular-movies">
+            <p>Popular moves</p>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section>
+
+        <section id="new-released">
+            <p>New Released</p>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="src/js/initailize-swipers.js"></script>
 </body>
 </html>
