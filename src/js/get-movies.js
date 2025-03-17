@@ -1,25 +1,32 @@
-const API_HOST = 'ott-details.p.rapidapi.com';
-const API_KEY = '023b2d1873msh77417b6529dcabbp14f83ejsnc34d18b3e721';
-const getMovies = async (title, page = 1) => {
-    try {
-        const url = new URL(`https://${API_HOST}/search`);
-        url.search = new URLSearchParams({ title, page });
+export const getMovies = async (endpoint, params = {}) => {
+    const baseUrl = 'https://imdb236.p.rapidapi.com';
+    const url = new URL(endpoint, baseUrl);
 
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                'x-rapidapi-key': API_KEY,
-                'x-rapidapi-host': API_HOST
-            }
-        });
+    const searchParams = new URLSearchParams(params);
+
+    url.search = searchParams.toString();
+
+    const options = {
+        method: 'GET',
+        headers: {
+            'x-rapidapi-key': '023b2d1873msh77417b6529dcabbp14f83ejsnc34d18b3e721',
+            'x-rapidapi-host': 'imdb236.p.rapidapi.com',
+        },
+    };
+
+    try {
+        const response = await fetch(url, options);
 
         if (!response.ok) {
-            throw new Error(`HTTP Error: ${response.status} - ${response.statusText}`);
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
-        return await response.json();
+        const result = await response.json();
+        console.log(result, Array.isArray(result));
+        return result;
+
     } catch (error) {
-        console.error('Error fetching movies:', error.message);
+        console.error('Failed to fetch data:', error);
     }
 };
 
