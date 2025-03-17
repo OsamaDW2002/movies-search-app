@@ -22,5 +22,5 @@ section > p {
     align-items: center;
 }
 .hide-swiper{
-    display: none;
+    display: none !important;
 }

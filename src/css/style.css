@@ -4,7 +4,7 @@
     --card-title-background-color: rgba(248, 248, 248, 0.37);
     --main-background-color: #121212;
     --placeholder-color: rgba(248, 248, 248, 0.5);
-    --input-colors: #313863;
+    --input-colors: rgb(49, 56, 99);
 }
 *,
 *::before,

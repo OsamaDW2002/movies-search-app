@@ -1,9 +1,22 @@
 import { getMovies } from "./get-movies.js";
+import {displayErrorMsg} from "./display-error-msg.js";
 
 export const addCardsToSwiper = (data, id)=> {
     const swiperName = document.getElementById(id);
     const slides = swiperName.querySelector(`#${id} .swiper-wrapper`)
-
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    target.style.backgroundImage = `url(${target.dataset.bgImage})`;
+                    target.classList.add('img-fit');
+                    observer.unobserve(target);
+                }
+            });
+        },
+        { rootMargin: "100px" }
+    );
     for (const el of data) {
         const swiperSlide = document.createElement("div");
         swiperSlide.classList.add('swiper-slide');
@@ -13,7 +26,6 @@ export const addCardsToSwiper = (data, id)=> {
         if (el?.primaryImage) {
             card.dataset.bgImage = el.primaryImage;
             card.addEventListener('click', (event) => {
-                console.log(event.currentTarget.id);
                 getMovies(`imdb/${event.currentTarget.id}`).then(response => {
                     document.getElementById('model-img').style.backgroundImage = `url(${response?.primaryImage})`;
                     document.getElementById('model-img').classList.add('img-fit');
@@ -23,23 +35,6 @@ export const addCardsToSwiper = (data, id)=> {
                     document.getElementById('description').showModal();
                 });
             })
-            const observer = new IntersectionObserver(
-                (entries, observer) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            const target = entry.target;
-                            target.style.backgroundImage = `url(${target.dataset.bgImage})`;
-                            target.style.backgroundSize = "cover";
-                            target.style.backgroundPosition = "center";
-                            target.style.backgroundRepeat = "no-repeat";
-
-                            observer.unobserve(target);
-                        }
-                    });
-                },
-                { rootMargin: "100px" }
-            );
-
             observer.observe(card);
         }
 
@@ -49,7 +44,6 @@ export const addCardsToSwiper = (data, id)=> {
         swiperSlide.appendChild(card);
         slides.appendChild(swiperSlide);
 
-        console.log("Slide added:", el?.originalTitle);
     }
 
 
@@ -58,11 +52,17 @@ document.addEventListener('DOMContentLoaded', ()=> {
            const popularMovies = localStorage.getItem('popular-movies');
            if(popularMovies){
                addCardsToSwiper(JSON.parse(popularMovies), 'popular-movies');
+               console.log(document.getElementById('error-msg').classList.contains('hide-swiper'))
+
            } else{
                getMovies('imdb/most-popular-movies').then(response => {
                    addCardsToSwiper(response, 'popular-movies');
                    localStorage.setItem('popular-movies', JSON.stringify(response));
+
+               }).catch((error)=>{
+                   displayErrorMsg();
                });
+               document.getElementById('error-msg').classList.add('hide-swiper');
            }
 
 })

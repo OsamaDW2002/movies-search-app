@@ -1,5 +1,6 @@
 import { getMovies } from "./get-movies.js";
 import { addCardsToSwiper } from "./on-page-load.js";
+import {displayErrorMsg} from "./display-error-msg.js";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
         getMovies("imdb/search", { type: "movie", primaryTitleAutocomplete: input }).then((response) => {
             searchResultSection.classList.remove("hide-swiper");
             addCardsToSwiper(response.results, "search-result");
+        }).catch((error)=>{
+            displayErrorMsg();
         });
     };
 
