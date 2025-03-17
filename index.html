@@ -16,8 +16,8 @@
             <li><img src="src/assets/icons/logo/logo.svg" alt="A logo image inside the navbar, featuring a movie symbol within a search icon."></li>
             <li><p>Movies Hunter</p></li>
             <li class="search-bar">
-                <div><input type="text" placeholder="search about movie’s title"></div>
-                <img src="src/assets/icons/search.svg" alt="A search icon inside the search input, which is within the navbar">
+                <div><input id="search-bar" type="text" placeholder="search about movie’s title"></div>
+                <img id="search" src="src/assets/icons/search.svg" alt="A search icon inside the search input, which is within the navbar">
             </li>
         </ul>
     </nav>
@@ -28,7 +28,7 @@
 <!--        </div>-->
         <section id="popular-movies">
             <p>Popular moves</p>
-            <div class="swiper">
+            <div class="swiper popular-movies">
                 <div class="swiper-wrapper">
 <!--                    <div class="swiper-slide">Slide 1</div>-->
 <!--                    <div class="swiper-slide">Slide 2</div>-->
@@ -61,12 +61,7 @@
             <p>Search Result</p>
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 1</div>
+
 
                 </div>
                 <div class="swiper-pagination"></div>
@@ -77,9 +72,10 @@
         </section>
 
     </main>
-    <script src="src/js/get-movies.js" type="module"> </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="src/js/initailize-swipers.js"></script>
+    <script src="src/js/get-movies.js" type="module"></script>
+    <script src="src/js/initailize-swipers.js" type="module"></script>
     <script src="src/js/on-page-load.js" type="module"></script>
+    <script src="src/js/searching-system.js" type="module"></script>
 </body>
 </html>

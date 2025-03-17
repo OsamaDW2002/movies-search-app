@@ -1,15 +1,27 @@
 const currentWidth = window.innerWidth <= 700 ? 1 : 4;
-const swiper = new Swiper(".swiper", {
+document.addEventListener('DOMContentLoaded', ()=> {
+    const popularMoviesSwiper = new Swiper(".popular-movies", {
+        slidesPerView: currentWidth,
+        slidesPerGroup: currentWidth,
+        loop: true,
+        pagination: { el: ".popular-movies .swiper-pagination", clickable: true },
+        navigation: { nextEl: ".popular-movies .swiper-button-next", prevEl: ".popular-movies .swiper-button-prev" },
+    });
+    const updateSlidesPerView = (slider) => {
+        slider.slidesPerView = currentWidth;
+        slider.slidesPerGroup= currentWidth;
+        slider.update();
+    };
+
+window.addEventListener("orientationchange", () => updateSlidesPerView(popularMoviesSwiper));
+
+})
+const searchResult = new Swiper('#search-result .swiper', {
     slidesPerView: currentWidth,
     slidesPerGroup: currentWidth,
     loop: true,
-    pagination: { el: ".swiper-pagination", clickable: true },
-    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    pagination: { el: "#search-result .swiper-pagination" },
+    navigation: { nextEl: "#search-result .swiper-button-next", prevEl: "#search-result .swiper-button-prev" },
 });
-const updateSlidesPerView = () => {
-    swiper.params.slidesPerView = currentWidth;
-    swiper.params.slidesPerGroup= currentWidth;
-    swiper.update();
-};
 
-window.addEventListener("orientationchange", updateSlidesPerView);
+

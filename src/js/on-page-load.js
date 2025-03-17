@@ -1,8 +1,8 @@
 import { getMovies } from "./get-movies.js";
 
-const addCardsToSwiper = (data, id)=> {
+export const addCardsToSwiper = (data, id)=> {
     const swiperName = document.getElementById(id);
-    const slides = swiperName.querySelector(".swiper-wrapper")
+    const slides = swiperName.querySelector(`#${id} .swiper-wrapper`)
 
     for (const el of data) {
         const swiperSlide = document.createElement("div");
