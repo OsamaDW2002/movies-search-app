@@ -6,80 +6,75 @@
     <link rel="stylesheet" href="src/css/nav.css">
     <link rel="stylesheet" href="src/css/swiper-style.css">
     <link rel="stylesheet" href="src/css/card-design.css">
+    <link rel="stylesheet" href="src/css/dailog.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Swiper Example</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><img src="src/assets/icons/logo/logo.svg" alt="A logo image inside the navbar, featuring a movie symbol within a search icon."></li>
-            <li><p>Movies Hunter</p></li>
-            <li class="search-bar">
-                <div><input type="text" placeholder="search about movie’s title"></div>
-                <img src="src/assets/icons/search.svg" alt="A search icon inside the search input, which is within the navbar">
-            </li>
-        </ul>
-    </nav>
-    <main>
-<!--        <div class="card-container">-->
-<!--            <div>-->
-<!--            </div>-->
-<!--        </div>-->
-        <section id="popular-movies">
-            <p>Popular moves</p>
-            <div class="swiper">
-                <div class="swiper-wrapper">
-<!--                    <div class="swiper-slide">Slide 1</div>-->
-<!--                    <div class="swiper-slide">Slide 2</div>-->
-<!--                    <div class="swiper-slide">Slide 3</div>-->
-<!--                    <div class="swiper-slide">Slide 1</div>-->
-<!--                    <div class="swiper-slide">Slide 2</div>-->
-<!--                    <div class="swiper-slide">Slide 3</div>-->
+<nav>
+    <ul>
+        <li><img src="src/assets/icons/logo/logo.svg" alt="A logo image inside the navbar, featuring a movie symbol within a search icon."></li>
+        <li><p>Movies Hunter</p></li>
+        <li class="search-bar">
+            <div><input id="search-bar" type="text" placeholder="search about movie’s title"></div>
+            <img id="search" src="src/assets/icons/search.svg" alt="A search icon inside the search input, which is within the navbar">
+        </li>
+        <li class="return-home"><p>home page</p></li>
+    </ul>
+</nav>
+<main>
+    <section id="popular-movies">
+        <p>Popular moves</p>
+        <div class="swiper popular-movies">
+            <div class="swiper-wrapper">
 
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-scrollbar"></div>
             </div>
-        </section>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </section>
 
-        <section id="new-released">
-            <p>New Released</p>
-            <div class="swiper">
-                <div class="swiper-wrapper">
+    <section id="search-result" class="hide-swiper">
+        <p>Search Result</p>
+        <div class="swiper">
+            <div class="swiper-wrapper">
 
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-scrollbar"></div>
+
             </div>
-        </section>
-        <section id="search-result" class="hide-swiper">
-            <p>Search Result</p>
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </section>
 
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-scrollbar"></div>
-            </div>
-        </section>
+    <section id="new-released">
+    </section>
 
-    </main>
-    <script src="src/js/get-movies.js" type="module"> </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="src/js/initailize-swipers.js"></script>
-    <script src="src/js/on-page-load.js" type="module"></script>
+</main>
+<dialog id="description">
+    <div id="model-img">
+        <img src="./src/assets/icons/close.svg" alt="close button that closes the dialog model">
+    </div>
+    <div id="text-container">
+        <div>
+            <p id="model-name">Name</p>
+            <p id="model-release-date">Release Date</p>
+        </div>
+        <p id="model-description">
+            Description
+        </p>
+    </div>
+</dialog>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="src/js/get-movies.js" type="module"></script>
+<script src="src/js/initailize-swipers.js" type="module"></script>
+<script src="src/js/on-page-load.js" type="module"></script>
+<script src="src/js/searching-system.js" type="module"></script>
+<script src="src/js/return-home-action.js"></script>
+<script src="src/js/dialog-close.js"></script>
 </body>
 </html>
