@@ -23,9 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const searchBarAction = () => {
-        alert('hi')
         const inputValue = searchInput.value.trim();
-        if (!inputValue) return; // Prevent empty searches
+        if (!inputValue) return;
 
         popularMovies.classList.add("hide-swiper");
         newReleased.classList.add("hide-swiper");

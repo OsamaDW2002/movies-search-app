@@ -9,9 +9,20 @@ export const addCardsToSwiper = (data, id)=> {
         swiperSlide.classList.add('swiper-slide');
         const card = document.createElement("div");
         card.classList.add("card-container");
-
+        card.id = el.id;
         if (el?.primaryImage) {
             card.dataset.bgImage = el.primaryImage;
+            card.addEventListener('click', (event) => {
+                console.log(event.currentTarget.id);
+                getMovies(`imdb/${event.currentTarget.id}`).then(response => {
+                    document.getElementById('model-img').style.backgroundImage = `url(${response?.primaryImage})`;
+                    document.getElementById('model-img').classList.add('img-fit');
+                    document.getElementById('model-name').textContent = response?.primaryTitle;
+                    document.getElementById('model-release-date').textContent = response?.startYear;
+                    document.getElementById('model-description').textContent = response?.description;
+                    document.getElementById('description').showModal();
+                });
+            })
             const observer = new IntersectionObserver(
                 (entries, observer) => {
                     entries.forEach((entry) => {

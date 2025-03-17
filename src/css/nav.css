@@ -16,7 +16,7 @@ nav ul {
     justify-content: space-evenly;
 }
 
-nav ul li > p {
+ p {
     color: var(--font-colors);
     font-size: 46px;
     font-weight: 700;
