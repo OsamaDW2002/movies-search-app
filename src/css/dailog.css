@@ -36,3 +36,34 @@ dialog{
     font-size: 30px;
     padding-inline: 30px;
 }
+
+
+@media (max-width: 700px) {
+    #description{
+        width: 400px;
+        height: 400px;
+    }
+
+    #model-img{
+        height: 220px;
+    }
+    #text-container{
+        height: 180px;
+    }
+    #text-container > div{
+        padding: 15px;
+    }
+    #description p{
+        font-size: 25px;
+        font-weight: 800;
+    }
+    #text-container > p{
+        font-size: 20px;
+        padding-inline: 10px;
+    }
+    #model-img > img{
+        width: 50px;
+        height: 50px;
+    }
+
+}
