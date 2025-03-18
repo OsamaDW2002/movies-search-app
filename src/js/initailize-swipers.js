@@ -10,12 +10,16 @@ document.addEventListener('DOMContentLoaded', ()=> {
     const updateSlidesPerView = (slider) => {
         slider.slidesPerView = currentWidth;
         slider.slidesPerGroup= currentWidth;
+        if(currentWidth === 1)
+            slider.pagination.clickable = false;
         slider.update();
     };
 
 window.addEventListener("orientationchange", () => updateSlidesPerView(popularMoviesSwiper));
 
-})
+window.addEventListener("resize", () => updateSlidesPerView(popularMoviesSwiper));
+});
+
 const searchResult = new Swiper('#search-result .swiper', {
     slidesPerView: currentWidth,
     slidesPerGroup: currentWidth,
