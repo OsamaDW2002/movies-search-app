@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
            const popularMovies = localStorage.getItem('popular-movies');
            if(popularMovies){
                addCardsToSwiper(JSON.parse(popularMovies), 'popular-movies');
-               console.log(document.getElementById('error-msg').classList.contains('hide-swiper'))
 
            } else{
                getMovies('imdb/most-popular-movies').then(response => {
