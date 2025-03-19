@@ -11,7 +11,7 @@ Movies Hunter is a web application that allows users to search for movies, view 
 -  As a user, I want to be able to **close the movie details dialog** when I'm done viewing it.
 
 ## Live Demo
- **[View the Live Application](#https://osamadw2002.github.io/movies-search-app/)** 
+ **[View the Live Application](https://osamadw2002.github.io/movies-search-app/)** 
 
 ## Run the Project Locally
 
