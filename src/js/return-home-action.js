@@ -1,0 +1,1 @@
+document.querySelector('.return-home').addEventListener('click', () => window.location.reload())

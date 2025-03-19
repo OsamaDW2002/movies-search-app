@@ -16,7 +16,7 @@ nav ul {
     justify-content: space-evenly;
 }
 
-nav ul li > p {
+ p {
     color: var(--font-colors);
     font-size: 46px;
     font-weight: 700;
@@ -54,7 +54,12 @@ nav ul li > p {
     width: 43px;
     height: 43px;
 }
-
+.return-home{
+    cursor: pointer;
+}
+.return-home p:hover{
+    color: var(--placeholder-color);
+}
 @media (max-width: 700px) {
     nav {
         height: 289px;

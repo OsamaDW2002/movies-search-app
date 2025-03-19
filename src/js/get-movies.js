@@ -17,16 +17,10 @@ export const getMovies = async (endpoint, params = {}) => {
     try {
         const response = await fetch(url, options);
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const result = await response.json();
-        console.log(result, Array.isArray(result));
-        return result;
+        return await response.json();
 
     } catch (error) {
-        console.error('Failed to fetch data:', error);
+        throw error;
     }
 };
 
